@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,15 +22,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5gR-jg-yCf">
-                                <rect key="frame" x="16" y="72" width="343" height="575"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bru-ww-hzv" userLabel="Titulo">
+                                <rect key="frame" x="23" y="85" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMh-Lt-7QZ" userLabel="Autor">
+                                <rect key="frame" x="23" y="127" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFa-xJ-HPu">
+                                <rect key="frame" x="23" y="164" width="327" height="475"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="475" id="IrY-xz-eHi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="dFa-xJ-HPu" secondAttribute="trailing" constant="10" id="BDs-MM-ddA"/>
+                            <constraint firstItem="dFa-xJ-HPu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Dwh-k3-JsX"/>
+                            <constraint firstItem="JMh-Lt-7QZ" firstAttribute="top" secondItem="Bru-ww-hzv" secondAttribute="bottom" constant="25" id="WqJ-7q-YMg"/>
+                            <constraint firstItem="JMh-Lt-7QZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="YGQ-uy-xKg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dFa-xJ-HPu" secondAttribute="bottom" constant="28" id="Z1Q-YR-mVF"/>
+                            <constraint firstItem="Bru-ww-hzv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="dN8-ry-4Dv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bru-ww-hzv" secondAttribute="trailing" constant="10" id="e3H-Pz-JVa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JMh-Lt-7QZ" secondAttribute="trailing" constant="10" id="hVz-ZT-fvW"/>
+                            <constraint firstItem="Bru-ww-hzv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="kAg-he-ncD"/>
+                            <constraint firstItem="dFa-xJ-HPu" firstAttribute="top" secondItem="JMh-Lt-7QZ" secondAttribute="bottom" constant="20" id="t5G-Ka-Ipv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LGO-5z-m0q">
                         <nil key="title"/>
@@ -42,8 +66,10 @@
                         </textField>
                     </navigationItem>
                     <connections>
-                        <outlet property="restfullResult" destination="5gR-jg-yCf" id="009-0M-WH0"/>
+                        <outlet property="autores" destination="JMh-Lt-7QZ" id="Ns8-6D-H0Z"/>
+                        <outlet property="portada" destination="dFa-xJ-HPu" id="qGV-ss-ZUD"/>
                         <outlet property="searchText" destination="mCY-d9-kf1" id="hKl-0B-YsY"/>
+                        <outlet property="titulo" destination="Bru-ww-hzv" id="JgY-Cw-1yL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
